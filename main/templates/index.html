@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo App</title>
 
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/checkbox.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/checkbox.css' %}">
 </head>
 <body>
   
@@ -33,8 +34,8 @@
         <div class="todo-item__footer">
           <p>17.11.2020 <span>17:22</span></p>
           <div class="action-buttons">
-            <img src="./icons/mark.svg" alt="mark" />
-            <img src="./icons/done.svg" alt="done" />
+            <img src="{% static 'icons/mark.svg' %}" alt="mark" />
+            <img src="{% static 'icons/done.svg' %}" alt="done" />
           </div>
         </div>
       </div>
@@ -51,8 +52,8 @@
         <div class="todo-item__footer">
           <p>17.11.2020 <span>17:22</span></p>
           <div class="action-buttons">
-            <img src="./icons/mark.svg" alt="mark" />
-            <img src="./icons/done.svg" alt="done" />
+            <img src="{% static 'icons/mark.svg' %}" alt="mark" />
+            <img src="{% static 'icons/done.svg' %}" alt="done" />
           </div>
         </div>
       </div>
@@ -69,8 +70,8 @@
         <div class="todo-item__footer">
           <p>17.11.2020 <span>17:22</span></p>
           <div class="action-buttons">
-            <img src="./icons/mark.svg" alt="mark" />
-            <img src="./icons/done.svg" alt="done" />
+            <img src="{% static 'icons/mark.svg' %}" alt="mark" />
+            <img src="{% static 'icons/done.svg' %}" alt="done" />
           </div>
         </div>
       </div>
