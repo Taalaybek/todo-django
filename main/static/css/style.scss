@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #263238;
+}
+
+$pink: #CE93D8;
+$darkpink: #b45cc4;
+$doneTodo: #757575;
+
+section {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .create-container {
+    width: 80%;
+
+    .create-input {
+      padding: 12px 5px;
+      font-size: 18px;
+      width: 80%;
+      border-radius: 3px;
+      border: 1px solid grey;
+      outline: none;
+    }
+
+    .create-button {
+      padding: 12px 5px;
+      background-color: $pink;
+      border: 1px solid $pink;
+      color: white;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: 1s ease;
+
+      &:hover {
+        background-color: $darkpink;
+      }
+
+      &:active {
+        box-shadow: 2px 2px 5px 3px #FCE4EC;
+      }
+    }
+  }
+
+  .todo-container {
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .todo-item {
+      border: 1px solid gray;
+      border-radius: 3px;
+      width: 24%;
+      padding: 10px 15px;
+      background-color: #c8e6c9;
+      margin-bottom: 20px;
+
+      &.done {
+        background: #e0e0e0;
+        text-decoration: line-through;
+        color: $doneTodo;
+
+        h4, p, span {
+          color: $doneTodo;
+        }
+
+        img {
+          opacity: 0.5;
+        }
+      }
+
+      &.marked {
+        background: #ffe082;
+        border: 2px solid #fad66a;
+      }
+
+      &__header {
+        display: flex;
+        min-height: 35px;
+
+        h4 {
+          font-size: 18px;
+          font-family: sans-serif;
+        }
+      }
+
+      &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .action-buttons {
+          display: flex;
+          
+          @each $button in 'mark', 'done' {
+            [alt="#{$button}"] {
+              width: 25px;
+              height: 25px;
+              margin: 0 5px;
+              cursor: pointer;
+            }
+          }
+        }
+
+        p {
+          font-size: 15px;
+          font-family: sans-serif;
+        }
+      }
+    }
+  }
+}

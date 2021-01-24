@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/checkbox.css">
+</head>
+<body>
+  
+  <section>
+    <!-- begin:Create todo input -->
+    <div class="create-container">
+      <input type="text" name="title" placeholder="Напишите сюда новую задачу" class="create-input">
+
+      <button class="create-button">Добавить</button>
+    </div>
+    <!-- end:Create todo input -->
+
+    <!-- begin:Todo list -->
+    <div class="todo-container">
+      <div class="todo-item">
+        <div class="todo-item__header">
+          <label class="checkbox_container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+          <h4>Купить молоко</h4>
+        </div>
+
+        <div class="todo-item__footer">
+          <p>17.11.2020 <span>17:22</span></p>
+          <div class="action-buttons">
+            <img src="./icons/mark.svg" alt="mark" />
+            <img src="./icons/done.svg" alt="done" />
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-item done">
+        <div class="todo-item__header">
+          <label class="checkbox_container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+          <h4>Купить молоко</h4>
+        </div>
+
+        <div class="todo-item__footer">
+          <p>17.11.2020 <span>17:22</span></p>
+          <div class="action-buttons">
+            <img src="./icons/mark.svg" alt="mark" />
+            <img src="./icons/done.svg" alt="done" />
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-item marked">
+        <div class="todo-item__header">
+          <label class="checkbox_container">
+            <input type="checkbox" name="mark" />
+            <span class="checkmark"></span>
+          </label>
+          <h4>Купить молоко</h4>
+        </div>
+
+        <div class="todo-item__footer">
+          <p>17.11.2020 <span>17:22</span></p>
+          <div class="action-buttons">
+            <img src="./icons/mark.svg" alt="mark" />
+            <img src="./icons/done.svg" alt="done" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end:Todo list -->
+  </section>
+  
+  <script src="./script.js"></script>
+</body>
+</html>
