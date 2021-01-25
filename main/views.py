@@ -72,3 +72,7 @@ def make_book_favorite(request, id):
   book.save()
 
   return redirect(books)
+
+def book(request, id):
+  book = Book.objects.get(id=id)
+  return render(request, "book_detail.html", {"book": book})
