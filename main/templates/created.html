@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+  <h5><a href="{% url 'home' %}">Home</a></h5>
   <div class="after-handle-message created">
-    Succcesfully created todo
+    Succcesfully created todo <strong>{{ todo.title }}</strong>
   </div>
 </body>
 </html>

@@ -13,7 +13,7 @@
   <section>
     <!-- begin:Create todo input -->
     <div class="create-container">
-      <form action="" method="POST">
+      <form action="{% url 'add-todo' %}" method="POST">
         {% csrf_token %}
         <input type="text" name="title" placeholder="Напишите сюда новую задачу" class="create-input">
         <button type="submit" class="create-button">Добавить</button>
