@@ -55,3 +55,8 @@ def make_done(request, id):
   todo.save()
 
   return redirect(homepage)
+
+def delete_book(request, id):
+  book = Book.objects.get(id=id)
+  book.delete()
+  return redirect(books)
