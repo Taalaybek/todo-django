@@ -9,7 +9,47 @@
 </head>
 <body>
   <div class="container pt-2">
-    <div class="row">
+    <div class="row mt-2 py-3 border-bottom">
+      <div class="col-lg-8 col-md-10 col-sm-12">
+        <form action="{% url 'add-book' %}" method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="title" class="form-label">Book title</label>
+            <input type="text" name="title" class="form-control" id="title" aria-describedby="book_title">
+          </div>
+          <div class="mb-3">
+            <label for="subtitle" class="form-label">Book subtitle</label>
+            <input type="text" name="subtitle" class="form-control" id="subtitle" aria-describedby="book_subtitle">
+          </div>
+          <div class="mb-3">
+            <label for="genre" class="form-label">Book genre</label>
+            <input type="text" name="genre" class="form-control" id="genre" aria-describedby="book_genre">
+          </div>
+          <div class="mb-3">
+            <label for="author" class="form-label">Book author</label>
+            <input type="text" name="author" class="form-control" id="author" aria-describedby="book_author">
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Book published date</label>
+            <input type="date" name="date" class="form-control" id="date" aria-describedby="book_published_date">
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Book price</label>
+            <input type="number" name="price" class="form-control" id="date" aria-describedby="book_published_date">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Book description</label>
+            <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col-lg-3 col-md-2 d-sm-none"></div>
+    </div>
+    <div class="row py-2 text-center">
+      <h5>Books list</h5>
+    </div>
+    <div class="row my-2 py-3">
       {% for book in books %}
       <div class="col-lg-3 col-md-4 col-sm-12">
         <div class="card">
