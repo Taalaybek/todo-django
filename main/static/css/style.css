@@ -132,6 +132,10 @@ section .todo-container .todo-item__footer .action-buttons [alt="mark"] {
   height: 25px;
   margin: 0 5px;
   cursor: pointer;
+  background-color: #263238;
+  color: #263238;
+  -webkit-mask: url("../icons/mark.svg") center/contain no-repeat;
+  mask: url("../icons/mark.svg") center/contain no-repeat;
 }
 
 section .todo-container .todo-item__footer .action-buttons [alt="done"] {
@@ -139,6 +143,16 @@ section .todo-container .todo-item__footer .action-buttons [alt="done"] {
   height: 25px;
   margin: 0 5px;
   cursor: pointer;
+  background-color: #263238;
+  color: #263238;
+  -webkit-mask: url("../icons/done.svg") center/contain no-repeat;
+  mask: url("../icons/done.svg") center/contain no-repeat;
+}
+
+section .todo-container .todo-item__footer .action-buttons .marked {
+  background-color: #ffe082;
+  fill: #ffe082;
+  color: #ffe082;
 }
 
 section .todo-container .todo-item__footer p {

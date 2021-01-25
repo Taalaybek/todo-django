@@ -1,13 +1,13 @@
+$pink: #CE93D8;
+$darkpink: #b45cc4;
+$doneTodo: #757575;
+$black: #263238;
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #263238;
+  color: $black;
 }
-
-$pink: #CE93D8;
-$darkpink: #b45cc4;
-$doneTodo: #757575;
 
 section {
   width: 100%;
@@ -108,7 +108,17 @@ section {
               height: 25px;
               margin: 0 5px;
               cursor: pointer;
+              background-color: $black;
+              color: $black;
+              -webkit-mask: url('../icons/#{$button}.svg') center / contain no-repeat;
+              mask: url('../icons/#{$button}.svg') center / contain no-repeat;
             }
+          }
+
+          .marked {
+            background-color: #ffe082;
+            fill: #ffe082;
+            color: #ffe082;
           }
         }
 
