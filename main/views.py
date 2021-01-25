@@ -60,3 +60,15 @@ def delete_book(request, id):
   book = Book.objects.get(id=id)
   book.delete()
   return redirect(books)
+
+def make_book_favorite(request, id):
+  book = Book.objects.get(id=id)
+
+  if book.is_favorite:
+    book.is_favorite = False
+  else:
+    book.is_favorite = True
+  
+  book.save()
+
+  return redirect(books)
