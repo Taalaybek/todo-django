@@ -145,4 +145,27 @@ section .todo-container .todo-item__footer p {
   font-size: 15px;
   font-family: sans-serif;
 }
+
+.after-handle-message {
+  width: 80%;
+  padding: 10px 15px;
+  color: #263238;
+  border: 1px solid gray;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.after-handle-message.created {
+  color: green;
+}
+
+.after-handle-message.deleted {
+  color: red;
+}
+
+.after-handle-message.updated {
+  color: lightblue;
+}
 /*# sourceMappingURL=style.css.map */
