@@ -24,20 +24,27 @@
     <!-- begin:Todo list -->
     <div class="todo-container">
     {% for todo in todos %}
-      <div class="todo-item">
+      <div class="todo-item {% if todo.is_favorite %}marked{% elif todo.is_done %}done{% endif %}">
         <div class="todo-item__header">
-          <label class="checkbox_container">
-            <input type="checkbox" />
-            <span class="checkmark"></span>
-          </label>
+          <form action="{% url 'make-done' todo.id %}" method="POST">
+            <label class="checkbox_container">
+              {% csrf_token %}
+              <input name="done" type="checkbox" {% if todo.is_done %}checked{% endif %} />
+              <button type="submit" class="checkmark"></button>
+            </label>
+          </form>
           <h4>{{ todo.title }}</h4>
         </div>
 
         <div class="todo-item__footer">
           <p>{{ todo.created_at }}</p>
           <div class="action-buttons">
-            <div alt="mark"></div>
-            <div alt="done"></div>
+            <a href="{% url 'mark-todo' todo.id %}">
+              <div {% if todo.is_favorite %}class="marked"{% endif %} alt="mark"></div>
+            </a>
+            <a href="{% url 'delete-todo' todo.id %}">
+              <div alt="done"></div>
+            </a>
           </div>
         </div>
       </div>

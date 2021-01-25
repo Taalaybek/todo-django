@@ -25,3 +25,33 @@ def add_book(request):
   price = request.POST['price']
   Book(title=title, subtitle=subtitle, year=date, genre=genre, author=author, description=description, price=price).save()
   return redirect(books)
+
+def delete_todo(request, id):
+  todo = ToDo.objects.get(id=id)
+  todo.delete()
+  return redirect(homepage)
+
+def mark_todo(request, id):
+  todo = ToDo.objects.get(id=id)
+
+  if (todo.is_favorite):
+    todo.is_favorite = False
+  else:
+    todo.is_favorite = True
+  
+  todo.save()
+  return redirect(homepage)
+
+def make_done(request, id):
+  todo = ToDo.objects.get(id=id)
+
+  if todo.is_done:
+    todo.is_done = False
+  else:
+    todo.is_done = True
+    if todo.is_favorite:
+      todo.is_favorite = False
+
+  todo.save()
+
+  return redirect(homepage)
